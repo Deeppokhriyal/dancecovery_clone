@@ -1,3 +1,4 @@
+import 'package:dancecovery_clone/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -27,7 +28,7 @@ class _MainScreenState extends State<MainScreen> {
     Center(child: Text('Map Screen')),
     Center(child: Text('Lessons Screen')),
     Center(child: Text('Bookings Screen')),
-    Center(child: Text('Profile Screen')),
+    ProfileScreen()
   ];
 
   @override
