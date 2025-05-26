@@ -1,3 +1,4 @@
+import 'package:dancecovery_clone/Booking_screen.dart';
 import 'package:dancecovery_clone/profile_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +28,7 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> _pages = [
     Center(child: Text('Map Screen')),
     Center(child: Text('Lessons Screen')),
-    Center(child: Text('Bookings Screen')),
+    BookingScreen(),
     ProfileScreen()
   ];
 
@@ -73,7 +74,7 @@ class _MainScreenState extends State<MainScreen> {
                 ),
               ],
               currentIndex: index,
-              selectedItemColor: Colors.blueAccent,
+              selectedItemColor: Colors.deepPurple[300],
               unselectedItemColor: Colors.grey,
               onTap: (i) => _selectedIndex.value = i,
             ),

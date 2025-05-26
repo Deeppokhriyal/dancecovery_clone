@@ -5,7 +5,8 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF2E5E3A), // Dark green background
+      // backgroundColor: Color(0xFF2E5E3A), // Dark green background
+      backgroundColor: Colors.deepPurple[100],
       body: Column(
         children: [
           SizedBox(height: 60),
