@@ -1,4 +1,6 @@
 import 'package:dancecovery_clone/Booking_screen.dart';
+import 'package:dancecovery_clone/lesson.dart';
+import 'package:dancecovery_clone/map_screen.dart';
 import 'package:dancecovery_clone/profile_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -26,8 +28,8 @@ class _MainScreenState extends State<MainScreen> {
   final ValueNotifier<int> _selectedIndex = ValueNotifier<int>(0);
 
   final List<Widget> _pages = [
-    Center(child: Text('Map Screen')),
-    Center(child: Text('Lessons Screen')),
+    MyHomePage(),
+    Lesson(),
     BookingScreen(),
     ProfileScreen()
   ];

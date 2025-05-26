@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -56,9 +55,9 @@ class ProfileScreen extends StatelessWidget {
       leading: Icon(icon, color: iconColor),
       title: Text(
         title,
-        style: TextStyle(color: textColor, fontSize: 16),
+        style: TextStyle(color: textColor, fontSize: 19,fontFamily: 'sans-serif-light'),
       ),
-      trailing: Icon(Icons.arrow_forward_ios, size: 16, color: iconColor),
+      trailing: Icon(Icons.arrow_forward_ios, size: 17, color: iconColor),
       onTap: () {
         // Handle navigation
       },

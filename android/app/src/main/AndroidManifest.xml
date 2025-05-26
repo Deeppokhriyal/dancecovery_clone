@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
+
+
         android:label="dancecovery_clone"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
@@ -20,6 +22,8 @@
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"
               />
+            <meta-data android:name="com.google.android.geo.API_KEY"
+                android:value="AIzaSyA1gFLhQztPYaRMMEVM5hEt43V0gKhCe9g"/>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
