@@ -28,8 +28,10 @@ class _MainScreenState extends State<MainScreen> {
   final ValueNotifier<int> _selectedIndex = ValueNotifier<int>(0);
 
   final List<Widget> _pages = [
-    MyHomePage(),
+    // MyHomePage(),
     Lesson(),
+    Lesson(),
+
     BookingScreen(),
     ProfileScreen()
   ];
