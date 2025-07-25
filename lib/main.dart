@@ -47,7 +47,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     final List<Widget> pages = [
-      Lesson(),
+      MyMapPage(),
       Lesson(), // Replace with actual Scheduler screen
       BookingScreen(),
       ProfileScreen(),
