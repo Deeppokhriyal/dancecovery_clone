@@ -7,14 +7,15 @@ class Lesson extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        title: const Text(""),
-        centerTitle: true,
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.grey.shade100,
+      //   elevation: 0,
+      //   title: const Text(""),
+      //   centerTitle: true,
+      // ),
       body: Column(
         children: [
+          SizedBox(height: 80),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Container(
