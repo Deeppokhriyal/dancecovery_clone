@@ -50,7 +50,7 @@ class _MainScreenState extends State<MainScreen> {
       DanceMapPage(),
       Lesson(), // Replace with actual Scheduler screen
       BookingScreen(),
-      ProfileScreen(),
+      ProfilePage(),
     ];
 
     return WillPopScope(

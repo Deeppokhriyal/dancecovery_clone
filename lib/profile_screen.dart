@@ -1,67 +1,48 @@
 import 'package:flutter/material.dart';
-class ProfileScreen extends StatelessWidget {
+
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey[200],
       body: SafeArea(
         child: Column(
           children: [
-            // Header with name and avatar
-            Padding(
-              padding: const EdgeInsets.all(16),
-              child: Row(
-                children: [
-                  SizedBox(height: 50),
-                  CircleAvatar(
-                    radius: 30,
-                    backgroundImage: AssetImage('assets/icons/user.png'), // Your image here
-                  ),
-                  const SizedBox(width: 16),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text(
-                        'Deep Celestial',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                        ),
-                      ),
-                      SizedBox(height: 4),
-                      Text(
-                        'dancecovery@gmail.com',
-                        style: TextStyle(color: Colors.grey),
-                      ),
-                      Text(
-                        '+358 724 819 7717',
-                        style: TextStyle(color: Colors.grey),
-                      ),
-                    ],
-                  ),
-                  const Spacer(),
-                  Icon(Icons.edit, color: Colors.grey),
-                ],
+            const SizedBox(height: 20),
+            // Profile Section
+            Container(
+              padding: const EdgeInsets.all(20),
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              decoration: BoxDecoration(
+                color: const Color(0xFFD1D5F0), // light purple background
+                borderRadius: BorderRadius.circular(20),
               ),
-            ),
-
-            const SizedBox(height: 12),
-
-            // Card Items
-            Expanded(
-              child: ListView(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Column(
                 children: [
-                  _buildTile(Icons.edit, 'Edit Profile'),
-                  _buildTile(Icons.history, 'Purchase History'),
-                  _buildTile(Icons.lock_outline, 'Change Password'),
-                  _buildTile(Icons.email_outlined, 'Change Email Address'),
-                  _buildTile(Icons.lightbulb_outline, 'Give Feedback'),
-                  _buildTile(Icons.privacy_tip_outlined, 'Privacy Policy'),
-                  const Divider(height: 24),
-                  _buildTile(Icons.logout, 'Logout', iconColor: Colors.red, textColor: Colors.red),
-                  _buildTile(Icons.delete_outline, 'Delete Account', iconColor: Colors.red, textColor: Colors.red),
+                  // Profile Avatar
+                  CircleAvatar(
+                    radius: 40,
+                    backgroundColor: Colors.white,
+                    child: const Icon(Icons.person, size: 50, color: Colors.blue),
+                  ),
+                  const SizedBox(height: 10),
+                  const Text(
+                    "Shivanshi Mishra",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  // Buttons List
+                  _buildMenuItem(Icons.edit, "Edit Profile"),
+                  _buildMenuItem(Icons.history, "Purchase History"),
+                  _buildMenuItem(Icons.lightbulb_outline, "Give Feedback"),
+                  _buildMenuItem(Icons.privacy_tip_outlined, "Privacy Policy"),
+                  _buildMenuItem(Icons.logout, "Logout", color: Colors.orange),
+                  _buildMenuItem(Icons.delete, "Delete account", color: Colors.red),
                 ],
               ),
             ),
@@ -71,41 +52,33 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildTile(IconData icon, String title,
-      {Color iconColor = Colors.blue, Color textColor = Colors.black}) {
-    return Card(
-      margin: const EdgeInsets.symmetric(vertical: 6),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      elevation: 1,
+  // Menu Item Widget
+  static Widget _buildMenuItem(IconData icon, String title, {Color? color}) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 5),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12),
+      ),
       child: ListTile(
-        leading: Icon(icon, color: iconColor),
+        leading: Icon(icon, color: color ?? Colors.black),
         title: Text(
           title,
-          style: TextStyle(fontSize: 16, color: textColor),
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
+            color: color ?? Colors.black,
+          ),
         ),
         trailing: const Icon(Icons.arrow_forward_ios, size: 16, color: Colors.grey),
         onTap: () {},
       ),
     );
   }
+}
 
-  Widget _buildSwitchTile(IconData icon, String title) {
-    return Card(
-      margin: const EdgeInsets.symmetric(vertical: 6),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      elevation: 1,
-      child: ListTile(
-        leading: Icon(icon, color: Colors.blue),
-        title: Text(
-          title,
-          style: TextStyle(fontSize: 16, color: Colors.black),
-        ),
-        trailing: Switch(
-          value: true,
-          onChanged: (val) {},
-          activeColor: Colors.blue,
-        ),
-      ),
-    );
-  }
+void main() {
+  runApp(const MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: ProfilePage(),
+  ));
 }
